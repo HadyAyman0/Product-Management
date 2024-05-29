@@ -1,0 +1,79 @@
+:root
+{
+    --main-dark-color: #101214;
+    --secondary-dark-color: #161a1d;
+    --tertiary-dark-color: #333;
+}
+
+body
+{
+    background-color: var(--main-dark-color);
+    font-family: "Lora", serif;
+    color: #f1f1f1;
+}
+ form .form-control
+{
+background-color: var(--tertiary-dark-color);
+font-family: var(--bs-font-sans-serif);
+color: #f1f1f1;
+border: none;
+}
+form label {
+    font-family: var(--bs-font-sans-serif);
+    font-weight: 700;
+    
+}
+.form-control:focus
+{
+    box-shadow: none;
+    background-color: var(--tertiary-dark-color);
+    color: #f1f1f1;
+}
+.form-floating>.form-control:focus~label::after
+{
+    position: static;
+    
+}
+.form-floating>.form-control:focus~label
+{
+    color: #f1f1f1;
+}
+.form-floating>.form-control:not(:placeholder-shown)~label::after
+{
+    background-color: var(--tertiary-dark-color);
+}
+.form-floating>.form-control:not(:placeholder-shown)~label
+{
+    color: #f1f1f1;
+}
+.inner 
+{
+    padding: 25px;
+    background-color: var(--secondary-dark-color);
+}
+.inner img 
+{
+    height: 150px;
+    object-fit: contain;
+}
+
+.form-control 
+{
+    background-color: var(--tertiary-dark-color);
+}
+.form-control::placeholder
+{
+    color: #f1f1f1;
+}
+.form-floating  p 
+{
+    margin: 10px;
+    color: red;
+    
+}
+
+.form-floating p::before
+{
+    content: "*";
+    margin-right: 3px;
+} 

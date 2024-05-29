@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruds operation</title>
+    <!-- fav icon of the project -->
+    <link rel="icon" href="assets/imgs/favicon.png">
+    <!-- fontawsome link -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--  main css of project -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="container my-4 ">
+                <h1 class="text-center"> Product Management System </h1>
+                <form class="my-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" autocomplete="off" oninput="validate(nameRegex ,nameInput )"
+                            class="form-control" id="name" placeholder="name@example.com">
+                        <label for="name">Name</label>
+                        <p class="text-lowercase d-none"> YOU MUST WRITE THE FIRST LETTER WITH A CAPITAL LETTER AND
+                            MAXMIM 4 character </p>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" list="categories" autocomplete="off"
+                            oninput="validate(categoryRegex ,CategoryInput )" class="form-control" id="Category"
+                            placeholder="Password">
+                        <label for="Category">Category</label>
+                        <p class="text-lowercase d-none"> YOU MUST WRITE THE FIRST LETTER WITH A CAPITAL LETTER AND
+                            MAXMIM 4 character </p>
+                        <datalist id="categories">
+                            <option value="Screen"></option>
+                            <option value="Mobile"></option>
+                            <option value="Laptop"></option>
+                            <option value="Camera"></option>
+                            <option value="Clothes"></option>
+                        </datalist>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" autocomplete="off" class="form-control"
+                            oninput="validate(priceRegex ,priceInput )" id="price" placeholder="Password">
+                        <label for="price">price</label>
+                        <p class="text-lowercase d-none"> YOU MUST WRITE number between 1 to 100 </p>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" oninput="validate(descriptionRegex ,descriptionInput )"
+                            autocomplete="off" id="description" placeholder="ex: 5000"></textarea>
+                        <label for="description">Description</label>
+                        <p class="text-lowercase d-none"> YOU MUST WRITE THE FIRST LETTER WITH A CAPITAL LETTER AND
+                            MAXMIM 25 character </p>
+
+                        <div class="error d-none">
+                            Descripton should be at least 25 character and at most 100
+                            character
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" class="form-control" id="imageInput" accept="image/*" />
+                        <div id="imgSrcContainer" class="d-none">
+                            <i class="fa-solid fa-link"></i>
+                            <span id="imgSrc"></span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary mb-3" id="addBtn" onclick="addProduct()" type="button"> Add
+                        product</button>
+                        <button class="btn btn-danger mb-3 d-none" type="button" onclick="updateData(num);" id="updateBtn">Update Product</button>
+
+                </form>
+                <input type="search" class="form-control w-75 m-auto my-3" placeholder="Real Time Search"
+                    id="searchInput" oninput="searchProduct()">
+                <div class="row" id="productContainer">
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- bootstrap js link -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- main js link -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
